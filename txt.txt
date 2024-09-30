@@ -1,0 +1,13 @@
+1 - créer l'env
+2 - puis lancer django "django-admin startproject <nom du projet>"
+3 - lancer le serveur à partir du dossier créé pour django py manage.py runserver
+4 - MVT Modèle View Template architecture django (Modèle = code table bdd, V = controler, T=View)
+5 - créé application dans le projet "py manage.py startapp <nom du projet>quiz" 
+6 - créer des rooter pour que le framework navigue, dossier app (ici quiz) créer fichier urls.py et mettre ajour le urls.py du dossier de l'app (ici feelback)
+7 - créer des fichiers html, lié à la vue pour afficher la page : 
+    --> créer un dossier templates (dans quiz), puis un dossier <nom de l'app> ici quiz, puis un fichier html.
+    --> dans settings.py modifier : le dic TEMPLATES, dans 'DIRS', pour ajouter le templates de l'app et INSTALLED_APPS pour ajouter l'app
+
+8 - voir les modules à installer dans l'app pip freeze (regarder)  pip -r requirements.txt
+
+
