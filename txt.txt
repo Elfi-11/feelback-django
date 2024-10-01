@@ -13,5 +13,7 @@
 
 Tips git :
 
-1 - toujours être sur sa branch, git branch <nom de la branch> ; 
+1 - toujours être sur sa branch, git branch <nom de ta branch> ; 
 2 - travailler sur sa branch, puis envoyer les modif : git add . ; git commit -m"nom_du_commit" ; git push (ajoute, dans la branch local, et envoie sur le github)
+3 - Après avoir commit, git switch main , pour repasser sur la branch main, git pull,
+4 - git switch <nom de ta branch>
