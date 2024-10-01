@@ -1,5 +1,5 @@
 1 - créer l'env
-2 - puis lancer django "django-admin startproject <nom du projet>"
+2 - puis lancer django "django-admin startproject django feelback"
 3 - lancer le serveur à partir du dossier créé pour django py manage.py runserver
 4 - MVT Modèle View Template architecture django (Modèle = code table bdd, V = controler, T=View)
 5 - créé application dans le projet "py manage.py startapp <nom du projet>quiz" 
