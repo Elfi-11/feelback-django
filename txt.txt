@@ -11,3 +11,7 @@
 8 - voir les modules à installer dans l'app pip freeze (regarder)  pip -r requirements.txt
 
 
+Tips git :
+
+1 - toujours être sur sa branch, git branch <nom de la branch> ; 
+2 - travailler sur sa branch, puis envoyer les modif : git add . ; git commit -m"nom_du_commit" ; git push (ajoute, dans la branch local, et envoie sur le github)
