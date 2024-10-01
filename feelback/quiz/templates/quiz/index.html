@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../static/quiz/style.css">
     <title>Page d'accueil FeelBack</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'quiz/style.css' %}"> 
 </head>
 <body>
-
+    
     <!-- Header -->
     <header>
-        <img src="logoFeel.png" alt="FeelBack Logo"> <!-- Replace 'logo.png' with the actual image path -->
+        <img src="{% static 'quiz/logoFeel.png' %}" alt="My image">
         <h1>FeelBack</h1>
         <p>Le questionnaire de satisfaction</p>
     </header>
