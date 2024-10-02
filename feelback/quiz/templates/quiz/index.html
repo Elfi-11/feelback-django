@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil FeelBack</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'quiz/style.css' %}"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <img src="{% static 'quiz/logoFeel.png' %}" alt="FeelBack Logo">
+        <h1>FeelBack</h1>
+        <p>Le questionnaire de satisfaction</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+       
+
+        <!-- Button for Dashboard -->
+        <div class="button-container">
+            <button class="btn-grey">CONSULTER LE TABLEAU DE BORD</button>
+        </div>
+        <h2>Bienvenue sur l'application FeelBack</h2>
+        <p>Cette application vous permet d'évaluer la livraison de votre commande</p>
+
+        <!-- Button for Creating Order -->
+        <div class="button-container">
+            <button class="btn-blue full-width">CRÉER UNE COMMANDE FICTIVE ET RÉPONDRE AU QUESTIONNAIRE DE SATISFACTION</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>2024 | FeelBack</p>
+    </footer>
+
+
+</body>
+</html>
