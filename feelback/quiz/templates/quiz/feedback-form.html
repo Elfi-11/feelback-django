@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"> <!-- Spécifie l'encodage des caractères pour le document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Assure que la page s'adapte aux tailles d'écran pour être responsive -->
+    <title>FeelBack - Donner votre avis</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    
+    {% load static %} <!-- Balise Django pour charger les fichiers statiques, comme les images, les fichiers CSS ou JavaScript. 
+                         Cela nécessite d'avoir configuré le fichier settings.py pour la gestion des fichiers statiques. -->
+    
+    <link rel="stylesheet" href="{% static 'quiz/style.css' %}"> <!-- Utilisation de la balise Django pour générer automatiquement 
+                                                                      le chemin vers un fichier CSS statique. 
+                                                                      Le fichier 'style.css' est situé dans le dossier statique. -->
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"> <!-- Chargement des polices via Google Fonts -->
+
+</head>
+<body>
+
+    <!-- En-tête de la page -->
+    <header>
+        <img src="{% static 'quiz/logoFeel.png' %}" alt="FeelBack Logo"> <!-- Utilisation de la balise Django static 
+                                                                            pour afficher une image stockée dans les fichiers statiques -->
+        <h1>FeelBack</h1> <!-- Titre principal du site -->
+        <p>Le questionnaire de satisfaction</p> <!-- Slogan ou description du site -->
+    </header>
+
+    <!-- Contenu principal de la page -->
+    <div class="container">
+        <a href="{% url 'index' %}"> <!-- Utilisation de la balise url de Django pour générer dynamiquement l'URL 
+                                        vers la vue nommée 'index' (nom défini dans les URLs du projet). 
+                                        Cela permet de créer des liens plus fiables et modulables car l'URL réelle n'est pas codée en dur. -->
+            <button type="button" class="btn-grey">REVENIR SUR LA PAGE D'ACCUEIL</button> <!-- Bouton pour revenir à l'accueil -->
+        </a>
+
+        <h2>Donner votre avis</h2> <!-- Sous-titre pour inviter l'utilisateur à donner son avis -->
+
+        <!-- Formulaire de retour d'expérience -->
+        <form>
+            <!-- Question sur le délai de livraison -->
+            <p>Évaluer de 1 à 5 le respect du délai de livraison</p>
+            <label><input type="radio" name="delivery-time" value="1"> 1</label>
+            <label><input type="radio" name="delivery-time" value="2"> 2</label>
+            <label><input type="radio" name="delivery-time" value="3"> 3</label>
+            <label><input type="radio" name="delivery-time" value="4"> 4</label>
+            <label><input type="radio" name="delivery-time" value="5"> 5</label>
+
+            <!-- Question sur l'état du colis -->
+            <p>Évaluer de 1 à 5 l'état de votre colis à sa réception</p>
+            <label><input type="radio" name="package-condition" value="1"> 1</label>
+            <label><input type="radio" name="package-condition" value="2"> 2</label>
+            <label><input type="radio" name="package-condition" value="3"> 3</label>
+            <label><input type="radio" name="package-condition" value="4"> 4</label>
+            <label><input type="radio" name="package-condition" value="5"> 5</label>
+
+            <!-- Question sur le comportement du livreur -->
+            <p>Évaluer de 1 à 5 le comportement du livreur</p>
+            <label><input type="radio" name="courier-behavior" value="1"> 1</label>
+            <label><input type="radio" name="courier-behavior" value="2"> 2</label>
+            <label><input type="radio" name="courier-behavior" value="3"> 3</label>
+            <label><input type="radio" name="courier-behavior" value="4"> 4</label>
+            <label><input type="radio" name="courier-behavior" value="5"> 5</label>
+
+            <button class="btn-blue" type="submit">ENVOYER</button> <!-- Bouton pour soumettre le formulaire -->
+        </form>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>2024 | FeelBack</p> <!-- Mention de droits d'auteur ou informations supplémentaires -->
+    </footer>
+
+</body>
+</html>
