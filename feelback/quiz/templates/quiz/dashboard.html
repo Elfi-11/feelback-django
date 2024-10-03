@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"> <!-- Spécifie l'encodage des caractères pour le document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Assure que la page s'adapte aux tailles d'écran pour être responsive -->
+    <title>FeelBack - Tableau de bord</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    
+    {% load static %} <!-- Balise Django pour charger les fichiers statiques (CSS, images, etc.). 
+                         Nécessite que la gestion des fichiers statiques soit configurée dans le fichier settings.py de Django -->
+    
+    <link rel="stylesheet" href="{% static 'quiz/style.css' %}"> <!-- Utilisation de la balise Django static
+                                                                      pour générer l'URL d'un fichier CSS stocké dans les fichiers statiques -->
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"> <!-- Chargement de polices via Google Fonts -->
+
+</head>
+<body>
+
+    <!-- En-tête de la page -->
+    <header>
+        <img src="{% static 'quiz/logoFeel.png' %}" alt="FeelBack Logo"> <!-- Utilisation de static pour afficher une image 
+                                                                            qui est dans les fichiers statiques -->
+        <h1>FeelBack</h1> <!-- Titre du site -->
+        <p>Le questionnaire de satisfaction</p> <!-- Sous-titre ou description -->
+    </header>
+
+    <!-- Contenu principal de la page -->
+    <div class="container">
+        <a href="{% url 'index' %}"> <!-- Utilisation de url pour générer dynamiquement l'URL vers une vue nommée 'index', 
+                                        permettant une gestion plus flexible des routes dans Django -->
+            <button type="button" class="btn-grey">REVENIR SUR LA PAGE D'ACCUEIL</button> <!-- Bouton pour revenir à la page d'accueil -->
+        </a>
+
+        <h2>Tableau de bord</h2> <!-- Sous-titre pour la section Tableau de bord -->
+        <p>Cette page regroupe des statistiques moyennes sur l'ensemble des réponses données</p> <!-- Description du contenu de la page -->
+
+        <!-- Affichage des statistiques -->
+        <div class="stat-container">
+            <!-- Boîte contenant le nombre total de réponses -->
+            <div class="stat-box">
+                <p class="stat-number">{{ total_responses }}</p> <!-- Variable Django utilisée pour afficher le nombre total de réponses. 
+                                                                     La donnée est récupérée depuis la vue Django et injectée dans le template -->
+                <p class="stat-label">Réponses</p>
+            </div>
+            
+            <!-- Boîte contenant la moyenne du délai de livraison -->
+            <div class="stat-box">
+                <p class="stat-number">{{ avg_delivery_time }} / 5</p> <!-- Variable Django pour afficher la moyenne des notes de livraison. 
+                                                                            La donnée est calculée dans la vue et passée au template -->
+                <p class="stat-label">Délai de livraison</p>
+            </div>
+
+            <!-- Boîte contenant la moyenne de l'état des colis -->
+            <div class="stat-box">
+                <p class="stat-number">{{ avg_package_condition }} / 5</p> <!-- Variable Django pour afficher la moyenne des notes sur l'état du colis -->
+                <p class="stat-label">État du colis</p>
+            </div>
+
+            <!-- Boîte contenant la moyenne du comportement du livreur -->
+            <div class="stat-box">
+                <p class="stat-number">{{ avg_courier_behavior }} / 5</p> <!-- Variable Django pour afficher la moyenne des notes sur le comportement du livreur -->
+                <p class="stat-label">Comportement du livreur</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>2024 | FeelBack</p> <!-- Mention de copyright ou informations supplémentaires -->
+    </footer>
+
+</body>
+</html>
