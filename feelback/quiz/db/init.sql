@@ -122,11 +122,11 @@ ENGINE = InnoDB
 KEY_BLOCK_SIZE = 1;
 
 INSERT INTO users (email_users,password_users) VALUES ('user1@user', 'user1');
-INSERT INTO forms (name_forms) VALUES ('Le questionnaire de satisfaction');
-INSERT INTO questions (title_questions) 
-VALUES ('Évaluer de 1 à 5 le respect du délai de livraison'),
-       ('Évaluer de 1 à 5 l\'état de votre colis à sa réception'),
-       ('Évaluer de 1 à 5 le comportement du livreur');
+INSERT INTO forms (name_forms, users_id) VALUES ('Le questionnaire de satisfaction',1);
+INSERT INTO questions (title_questions, forms_id) 
+VALUES ('Évaluer de 1 à 5 le respect du délai de livraison',1),
+      ('Évaluer de 1 à 5 l\'état de votre colis à sa réception',1),
+      ('Évaluer de 1 à 5 le comportement du livreur',1);
 
 
 
