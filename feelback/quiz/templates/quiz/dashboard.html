@@ -6,10 +6,10 @@
     <title>FeelBack - Tableau de bord</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
     
     {% load static %} <!-- Balise Django pour charger les fichiers statiques (CSS, images, etc.). 
-                         Nécessite que la gestion des fichiers statiques soit configurée dans le fichier settings.py de Django -->
+                        Nécessite que la gestion des fichiers statiques soit configurée dans le fichier settings.py de Django -->
     
     <link rel="stylesheet" href="{% static 'quiz/style.css' %}"> <!-- Utilisation de la balise Django static
-                                                                      pour générer l'URL d'un fichier CSS stocké dans les fichiers statiques -->
+                                                                    pour générer l'URL d'un fichier CSS stocké dans les fichiers statiques -->
     
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"> <!-- Chargement de polices via Google Fonts -->
 
@@ -34,35 +34,31 @@
         <h2>Tableau de bord</h2> <!-- Sous-titre pour la section Tableau de bord -->
         <p>Cette page regroupe des statistiques moyennes sur l'ensemble des réponses données</p> <!-- Description du contenu de la page -->
 
-        <!-- Affichage des statistiques -->
         <div class="stat-container">
             <!-- Boîte contenant le nombre total de réponses -->
             <div class="stat-box">
-                <p class="stat-number">{{ total_responses }}</p> <!-- Variable Django utilisée pour afficher le nombre total de réponses. 
-                                                                     La donnée est récupérée depuis la vue Django et injectée dans le template -->
+                <p class="stat-number">{{ total_responses }}</p>
                 <p class="stat-label">Réponses</p>
             </div>
-            
-            <!-- Boîte contenant la moyenne du délai de livraison -->
+        
+            <!-- Boîte contenant la moyenne des délais de livraison -->
             <div class="stat-box">
-                <p class="stat-number">{{ avg_delivery_time }} / 5</p> <!-- Variable Django pour afficher la moyenne des notes de livraison. 
-                                                                            La donnée est calculée dans la vue et passée au template -->
-                <p class="stat-label">Délai de livraison</p>
+                <p class="stat-number">{{ avg_delivery_time|floatformat:2 }} / 5</p>
+                <p class="stat-label">Délais de livraison</p>
             </div>
-
+        
             <!-- Boîte contenant la moyenne de l'état des colis -->
             <div class="stat-box">
-                <p class="stat-number">{{ avg_package_condition }} / 5</p> <!-- Variable Django pour afficher la moyenne des notes sur l'état du colis -->
+                <p class="stat-number">{{ avg_package_condition|floatformat:2 }} / 5</p>
                 <p class="stat-label">État du colis</p>
             </div>
-
+        
             <!-- Boîte contenant la moyenne du comportement du livreur -->
             <div class="stat-box">
-                <p class="stat-number">{{ avg_courier_behavior }} / 5</p> <!-- Variable Django pour afficher la moyenne des notes sur le comportement du livreur -->
+                <p class="stat-number">{{ avg_courier_behavior|floatformat:2 }} / 5</p>
                 <p class="stat-label">Comportement du livreur</p>
             </div>
         </div>
-    </div>
 
     <!-- Pied de page -->
     <footer>

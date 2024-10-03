@@ -6,11 +6,11 @@
     <title>FeelBack - Donner votre avis</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
     
     {% load static %} <!-- Balise Django pour charger les fichiers statiques, comme les images, les fichiers CSS ou JavaScript. 
-                         Cela nécessite d'avoir configuré le fichier settings.py pour la gestion des fichiers statiques. -->
+                        Cela nécessite d'avoir configuré le fichier settings.py pour la gestion des fichiers statiques. -->
     
     <link rel="stylesheet" href="{% static 'quiz/style.css' %}"> <!-- Utilisation de la balise Django pour générer automatiquement 
-                                                                      le chemin vers un fichier CSS statique. 
-                                                                      Le fichier 'style.css' est situé dans le dossier statique. -->
+                                                                    le chemin vers un fichier CSS statique. 
+                                                                    Le fichier 'style.css' est situé dans le dossier statique. -->
     
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"> <!-- Chargement des polices via Google Fonts -->
 
@@ -35,33 +35,31 @@
 
         <h2>Donner votre avis</h2> <!-- Sous-titre pour inviter l'utilisateur à donner son avis -->
 
-        <!-- Formulaire de retour d'expérience -->
-        <form>
-            <!-- Question sur le délai de livraison -->
+        <form action="{% url 'submit_feedback' %}" method="POST">
+            {% csrf_token %}
+        
             <p>Évaluer de 1 à 5 le respect du délai de livraison</p>
-            <label><input type="radio" name="delivery-time" value="1"> 1</label>
-            <label><input type="radio" name="delivery-time" value="2"> 2</label>
-            <label><input type="radio" name="delivery-time" value="3"> 3</label>
-            <label><input type="radio" name="delivery-time" value="4"> 4</label>
-            <label><input type="radio" name="delivery-time" value="5"> 5</label>
-
-            <!-- Question sur l'état du colis -->
+            <label><input type="radio" name="delivery_time" value="1"> 1</label>
+            <label><input type="radio" name="delivery_time" value="2"> 2</label>
+            <label><input type="radio" name="delivery_time" value="3"> 3</label>
+            <label><input type="radio" name="delivery_time" value="4"> 4</label>
+            <label><input type="radio" name="delivery_time" value="5"> 5</label>
+        
             <p>Évaluer de 1 à 5 l'état de votre colis à sa réception</p>
-            <label><input type="radio" name="package-condition" value="1"> 1</label>
-            <label><input type="radio" name="package-condition" value="2"> 2</label>
-            <label><input type="radio" name="package-condition" value="3"> 3</label>
-            <label><input type="radio" name="package-condition" value="4"> 4</label>
-            <label><input type="radio" name="package-condition" value="5"> 5</label>
-
-            <!-- Question sur le comportement du livreur -->
+            <label><input type="radio" name="package_condition" value="1"> 1</label>
+            <label><input type="radio" name="package_condition" value="2"> 2</label>
+            <label><input type="radio" name="package_condition" value="3"> 3</label>
+            <label><input type="radio" name="package_condition" value="4"> 4</label>
+            <label><input type="radio" name="package_condition" value="5"> 5</label>
+        
             <p>Évaluer de 1 à 5 le comportement du livreur</p>
-            <label><input type="radio" name="courier-behavior" value="1"> 1</label>
-            <label><input type="radio" name="courier-behavior" value="2"> 2</label>
-            <label><input type="radio" name="courier-behavior" value="3"> 3</label>
-            <label><input type="radio" name="courier-behavior" value="4"> 4</label>
-            <label><input type="radio" name="courier-behavior" value="5"> 5</label>
-
-            <button class="btn-blue" type="submit">ENVOYER</button> <!-- Bouton pour soumettre le formulaire -->
+            <label><input type="radio" name="courier_behavior" value="1"> 1</label>
+            <label><input type="radio" name="courier_behavior" value="2"> 2</label>
+            <label><input type="radio" name="courier_behavior" value="3"> 3</label>
+            <label><input type="radio" name="courier_behavior" value="4"> 4</label>
+            <label><input type="radio" name="courier_behavior" value="5"> 5</label>
+        
+            <button class="btn-blue" type="submit">ENVOYER</button>
         </form>
     </div>
 
