@@ -1,7 +1,5 @@
 from django.db import models
-#Créer une class par table à autiliser pour dire à django com#ment est fait notre bdd
-#Normalement, utiliser ce modèle de classe pour créer les tables et accéder au colone
-#ATTENTION PAS DE makemigration ICI, autrement bddd = cassé, car django aura créer des nouvelles tables
+
 
 class User(models.Model):  
     id_users = models.AutoField(primary_key=True)  
@@ -36,8 +34,8 @@ class Form(models.Model):
 class Question(models.Model): 
     id_questions = models.AutoField(primary_key=True)  
     title_questions = models.CharField(max_length=150)  
-    created_at_forms = models.DateTimeField(auto_now_add=True)  
-    update_at_forms = models.DateTimeField(auto_now=True)  
+    created_at_questions = models.DateTimeField(auto_now_add=True)  
+    update_at_questions = models.DateTimeField(auto_now=True)  
     delete_at_questions = models.DateTimeField(null=True, default=None)  
     forms_id = models.ForeignKey(Form, on_delete=models.CASCADE, db_column='forms_id')  
 

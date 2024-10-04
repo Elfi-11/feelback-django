@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Page d'accueil FeelBack</title> 
     
-    {% load static %} <!-- Balise Django pour charger les fichiers statiques (CSS, images, etc.). 
-                        Cela nécessite que la gestion des fichiers statiques soit configurée dans le fichier settings.py de Django -->
+    {% load static %} <!-- Balise Django pour innitialiser le chargement des fichiers statiques. -->
     
-    <link rel="stylesheet" href="{% static 'quiz/style.css' %}"> <!-- Utilisation de la balise static
-                                                                    pour générer l'URL d'un fichier CSS stocké dans les fichiers statiques -->
+    <link rel="stylesheet" href="{% static 'quiz/style.css' %}"> <!-- Utilisation de la balise STATIC pour charger le fichier css -->
     
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet"> 
 
@@ -17,16 +15,14 @@
 <body>
 
     <header>
-        <img src="{% static 'quiz/logoFeel.png' %}" alt="FeelBack Logo"> <!-- Utilisation de la balise Django static pour afficher une image 
-                                                                            qui est dans les fichiers statiques -->
+        <img src="{% static 'quiz/logoFeel.png' %}" alt="FeelBack Logo"> <!-- Utilisation de la balise STATIC pour charger le logo -->
         <h1>FeelBack</h1> 
         <p>Le questionnaire de satisfaction</p> 
     </header>
 
     <div class="container">
         <div class="button-container">
-            <a href="{% url 'dashboard' %}"> <!-- Utilisation de url pour générer dynamiquement l'URL vers la vue nommée 'dashboard', 
-                                                permettant une gestion plus flexible des routes dans Django -->
+            <a href="{% url 'dashboard' %}"> <!-- Utilisation de la balise URL pour charger la page du dashboard -->
                 <button type="button" class="btn-grey">CONSULTER LE TABLEAU DE BORD</button> 
             </a>
         </div>
@@ -35,8 +31,8 @@
         <p>Cette application vous permet d'évaluer la livraison de votre commande</p>
 
         <div class="button-container">
-            <a href="{% url 'form' %}"> 
-                <button type="button" class="btn-blue full-width">CRÉER UNE COMMANDE FICTIVE ET RÉPONDRE AU QUESTIONNAIRE DE SATISFACTION</button> <!-- Bouton pour créer une commande fictive -->
+            <a href="{% url 'form' %}">  <!-- Utilisation de la balise URL pour charger la page du formulaire, sera validé au click du bouton -->
+                <button type="button" class="btn-blue full-width">CRÉER UNE COMMANDE FICTIVE ET RÉPONDRE AU QUESTIONNAIRE DE SATISFACTION</button>
             </a>
         </div>
     </div>

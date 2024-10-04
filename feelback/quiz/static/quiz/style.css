@@ -29,109 +29,109 @@ header h1 {
 }
 
 header p {
-    color: #666; /* Couleur du texte secondaire (gris) */
-    font-size: 18px; /* Taille du texte du sous-titre */
+    color: #666; 
+    font-size: 18px;
 }
 
 /* Style pour le conteneur principal */
 .container {
-    margin: 40px auto; /* Centrage horizontal du conteneur avec une marge de 40px en haut et en bas */
-    width: 100%; /* Prend 100% de la largeur disponible */
-    max-width: 600px; /* Largeur maximale du conteneur fixée à 800px */
-    text-align: left; /* Aligne le texte à gauche dans le conteneur */
-    padding: 0 20px; /* Ajoute un espacement interne de 20px sur les côtés */
+    margin: 40px auto; 
+    width: 100%; 
+    max-width: 600px; 
+    text-align: left; 
+    padding: 0 20px; 
 }
 
 /* Style pour le texte du tableau de bord */
 .dashboard-text {
     margin-left: auto;
-    margin-right: auto; /* Centre horizontalement le bloc de texte */
-    max-width: 800px; /* Largeur maximale du texte */
-    text-align: left; /* Aligne le texte à gauche */
-    padding: 10px 0; /* Ajoute un espacement de 10px en haut et en bas */
+    margin-right: auto; 
+    max-width: 800px; 
+    text-align: left; 
+    padding: 10px 0; 
 }
 
 /* Conteneur des boutons */
 .button-container {
-    margin: 10px 0; /* Ajoute un espacement de 10px en haut et en bas autour des boutons */
+    margin: 10px 0; 
 }
 
 /* Style général des boutons */
 button {
-    display: block; /* Affiche les boutons comme des blocs */
-    width: 100%; /* Prend toute la largeur disponible dans le conteneur */
-    padding: 10px; /* Ajoute un espacement interne de 10px */
-    font-size: 14px; /* Taille du texte des boutons */
-    font-weight: bold; /* Met le texte en gras */
-    color: #fff; /* Couleur du texte en blanc */
-    border: none; /* Supprime les bordures */
-    cursor: pointer; /* Change le curseur pour montrer que c'est cliquable */
-    margin: 10px 0; /* Ajoute une marge de 10px en haut et en bas */
-    border-radius: 0; /* Supprime les angles arrondis du bouton */
-   
+    display: block; 
+    width: 100%; 
+    padding: 10px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    color: #fff; 
+    border: none; 
+    cursor: pointer; 
+    margin: 10px 0; 
+    border-radius: 0; 
 }
 
 /* Style spécifique pour le bouton gris */
 .btn-grey {
-    background-color: #4D4D4D; /* Couleur de fond gris foncé */
-    max-width: 300px; /* Largeur maximale de 300px */
+    background-color: #4D4D4D;
+    max-width: 300px; 
 }
 
 .btn-grey:hover {
-    background-color: #3c3c3c; /* Change la couleur au survol */
+    background-color: #3c3c3c; 
 }
 
 /* Style spécifique pour le bouton bleu */
 .btn-blue {
-    background-color: #0066ff; /* Couleur de fond bleu */
-    max-width: 450px; /* Largeur maximale de 450px */
+    background-color: #0066ff; 
+    max-width: 450px; 
 }
 
 .btn-blue:hover {
-    background-color: #0057e7; /* Change la couleur au survol */
+    background-color: #0057e7; 
 }
 
 /* Conteneur des boîtes de statistiques, centré */
 .stat-container {
-    display: flex; /* Utilise un modèle de boîte flexible pour aligner les boîtes */
-    justify-content: flex-start; /* Aligne les boîtes au début du conteneur */
-    gap: 10px; /* Ajoute un espacement de 10px entre chaque boîte */
-    margin-top: 30px; /* Ajoute une marge en haut */
-    width: fit-content; /* Le conteneur prendra seulement la largeur nécessaire */
+    display: flex; 
+    justify-content: flex-start; 
+    gap: 10px; 
+    margin-top: 30px; 
+    width: -moz-fit-content;
+    width: fit-content; 
     margin-left: auto;
-    margin-right: auto; /* Centre le conteneur des boîtes horizontalement */
+    margin-right: auto; 
 }
 
 /* Style pour chaque boîte de statistiques */
 .stat-box {
-    background-color: #0066ff; /* Couleur de fond bleu */
-    padding: 15px; /* Ajoute un espacement interne de 15px */
-    width: 120px; /* Largeur fixe des boîtes */
-    text-align: center; /* Centre le texte à l'intérieur */
-    color: white; /* Couleur du texte en blanc */
+    background-color: #0066ff; 
+    padding: 15px; 
+    width: 120px; 
+    text-align: center; 
+    color: white; 
 }
 
 .stat-number {
-    font-size: 24px; /* Taille du texte pour le nombre dans les statistiques */
-    font-weight: bold; /* Le nombre est en gras */
+    font-size: 24px; 
+    font-weight: bold; 
 }
 
 .stat-label {
-    font-size: 12px; /* Taille du texte pour les labels (étiquettes) */
-    margin-top: 5px; /* Ajoute un espacement au-dessus des étiquettes */
+    font-size: 12px; 
+    margin-top: 5px; 
 }
 
 /* Style pour le pied de page */
 footer {
-    background-color: #e5e5e5; /* Couleur de fond gris clair */
-    padding: 10px; /* Espacement interne de 10px */
-    text-align: center; /* Centre le texte du pied de page */
-    position: fixed; /* Fixe le pied de page en bas de la page */
-    width: 100%; /* Prend toute la largeur de la page */
-    bottom: 0; /* Se place en bas de la page */
+    background-color: #e5e5e5; 
+    padding: 10px; 
+    text-align: center; 
+    position: fixed; 
+    width: 100%; 
+    bottom: 0; 
 }
 
 footer p {
-    color: #999; /* Couleur du texte en gris clair */
-    font-size: 14px; /* Taille du texte du pied de page */
+    color: #999; 
+    font-size: 14px; 
 }

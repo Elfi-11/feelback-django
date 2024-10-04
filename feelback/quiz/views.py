@@ -37,7 +37,7 @@ def submit_feedback(request):
 
         print("Delivery Time from POST:", delivery_time)
         print("Package Condition from POST:", package_condition)
-        print("Courier Behavior from POST:", courier_behavior) #vérifier dans la console que les données sont envoyées par ce que voilà quoi!
+        print("Courier Behavior from POST:", courier_behavior) #vérifier dans la console que les données sont envoyées pour être sur ça marche!
 
         
         try:
@@ -56,7 +56,7 @@ def submit_feedback(request):
         Answer.objects.create(value_answers=package_condition, questions_id=package_condition_question, users_id=user)
         Answer.objects.create(value_answers=courier_behavior, questions_id=courier_behavior_question, users_id=user)
 
-        # Redirigez vers une page de succès
+        # Redirigez vers la page de dashboard
         return redirect('dashboard') 
 
     return render(request, 'quiz/feedback-form.html')
