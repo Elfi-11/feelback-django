@@ -1,0 +1,59 @@
+# FeelBack-Django - Questionnaire de Satisfaction
+
+## Description
+
+**FeelBack** est une application conçue pour recueillir des avis clients après chaque livraison. L'application permet aux clients d’évaluer trois aspects de leur expérience avec des notes de 1 à 5 :
+- Respect du délai de livraison
+- État du colis à la réception
+- Comportement du livreur
+
+Ce projet utilise le framework **Django** pour implémenter une architecture **MVT (Modèle, View, Template)** permettant de gérer les bases de données, la logique de contrôle, et le rendu des templates HTML.
+
+---
+
+
+## Installation
+
+
+1. **Cloner le dépôt** :
+   ```bash
+   git clone https://github.com/Elfi-11/feelback-django.git
+   cd feelback-django
+
+
+2. **Créer un environnement virtuel et l'activer** :
+
+    Sous Windows : 
+    --> python -m venv feelback-venv
+        feelback-venv\Scripts\activate
+
+    Sous MacOS ou Linux : 
+    --> python3 -m venv feelback-venv
+        source feelback-venv/bin/activate
+
+
+3. **Installer les dépendances** :
+    --> pip install -r requirements.txt
+
+
+4. **Commande pour run le server** :
+   -->  cd .\feelback\ puis python manage.py runserver
+
+
+5. **innitialisation de la BDD** :
+    --> Dans le dossier de l'application ici "quiz" se trouve un fichier init.sql.
+    Veuillez copier le contenu de ce fichier et le coller dans votre environnement MySQL 
+    pour initialiser la base de données.
+
+
+6. **Ne pas faire de migration** :
+   - Ce projet n'utilise pas l'outil de création de la base de données de Django. 
+   Si vous exécutez les commandes "makemigrations" et/ou "migrate", 
+   Django tentera de créer les tables par lui-même, alors qu'elles ont déjà été créées 
+   grâce au fichier "init.sql". Cela pertubera le bon fonctionnement de l'application.
+
+
+
+
+
+
