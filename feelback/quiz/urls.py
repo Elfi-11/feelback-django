@@ -5,6 +5,5 @@ urlpatterns = [
     path("", views.index, name="index"),  
     path("form/", views.feedbackForm, name="form"),  
     path("dashboard/", views.dashboard, name="dashboard"), 
-    path('submit-feedback/', views.submit_feedback, name='submit_feedback'),
-    path('success/', views.success_view, name='success'),   
+    path('submit-feedback/', views.submit_feedback, name='submit_feedback'), 
 ]
