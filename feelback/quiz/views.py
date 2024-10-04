@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.db.models import Avg
-from .models import Answer, Question, User  # Assurez-vous d'importer votre modèle personnalisé
+from .models import Answer, Question, User  
 
 def index(request):
     return render(request, 'quiz/index.html')
@@ -10,7 +10,7 @@ def feedbackForm(request):
 
 def dashboard(request):
     # Compte des réponses uniques
-    total_unique_responses = Answer.objects.values('id_answers').distinct().count()
+    total_unique_responses = Answer.objects.values('id_answers').distinct().count()/3
     
     # Ajout des statistiques spécifiques
     avg_delivery_time = Answer.objects.filter(questions_id__title_questions='Évaluer de 1 à 5 le respect du délai de livraison').aggregate(Avg('value_answers'))['value_answers__avg']
@@ -20,7 +20,7 @@ def dashboard(request):
     # Crée le contexte
     context = {
         'total_responses': total_unique_responses,
-        'avg_delivery_time': avg_delivery_time,  # Ajout de la moyenne des délais de livraison
+        'avg_delivery_time': avg_delivery_time,  
         'avg_package_condition': avg_package_condition,
         'avg_courier_behavior': avg_courier_behavior,
     }
@@ -37,7 +37,7 @@ def submit_feedback(request):
 
         print("Delivery Time from POST:", delivery_time)
         print("Package Condition from POST:", package_condition)
-        print("Courier Behavior from POST:", courier_behavior)
+        print("Courier Behavior from POST:", courier_behavior) #vérifier dans la console que les données sont envoyées par ce que voilà quoi!
 
         
         try:
@@ -57,11 +57,9 @@ def submit_feedback(request):
         Answer.objects.create(value_answers=courier_behavior, questions_id=courier_behavior_question, users_id=user)
 
         # Redirigez vers une page de succès
-        return redirect('success') 
+        return redirect('dashboard') 
 
     return render(request, 'quiz/feedback-form.html')
 
-def success_view(request):
-    return render(request, 'quiz/success.html')  
 
 
